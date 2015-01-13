@@ -1,0 +1,45 @@
+.item-list{
+    background-color: rgb(240,240,240);
+    
+    border-bottom: rgb(204,204,204) solid 4px;
+    margin: 0px;
+    padding: 0px;
+    
+    height:40px;    
+}
+
+.pager{
+    color: rgb(114,0,0);
+}
+
+.pager-current{
+    background-color: rgb(204,204,204);
+    
+    border-bottom: rgb(55,55,55) solid 4px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+li{
+    height: 30px;
+    width: 30px;
+    
+    padding-top: 10px;
+    padding-left: 20px;
+    
+    font-size: 20px;
+}
+
+li:hover{
+    background-color: rgb(204,204,204);
+    
+    border-bottom: rgb(55,55,55) solid 4px;
+}
+
+a{
+    color: rgb(114,0,0);
+    
+    text-decoration: none;
+}

@@ -1,0 +1,21 @@
+<html> 
+   <head>
+    <script type="text/javascript">
+        function RunClock()
+        {
+            var time=new Date();
+            var hours=time.getHours();
+            var minutes=time.getMinutes();
+            var seconds=time.getSeconds();
+            
+            document.getElementById('clock').innerHTML=hours+":"+minutes+":"+seconds;
+            time=setTimeout('RunClock()',1000);
+        }
+       </script> 
+    </head> 
+    
+    <body onload="RunClock()"> 
+        <p id="clock">
+         </p> 
+    </body> 
+</html>

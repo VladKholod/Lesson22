@@ -1,0 +1,33 @@
+<html> 
+   <head>
+    <script type="text/javascript">
+        function sendMessage()
+        {
+            var time=new Date();
+            var hours=time.getHours();
+            var minutes=time.getMinutes();
+            var seconds=time.getSeconds();
+            time=hours+":"+minutes+":"+seconds;
+            
+            var message=document.getElementById('message').value;
+            
+            var node=document.createElement("p");
+            node.innerHTML=message+"<br>"+time;
+            
+            document.getElementById('message').value="";
+            document.getElementById('container').appendChild(node);
+        }
+       </script> 
+    </head> 
+    
+    <body> 
+       <div id="input-message">
+           <p><input type="text" id="message"> </p>
+           <p><input type="button" value="Send" onclick="sendMessage()"></p>
+       </div>
+       
+        <div id="container">
+            
+        </div> 
+    </body> 
+</html>
