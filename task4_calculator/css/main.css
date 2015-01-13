@@ -1,35 +1,96 @@
 #wrapper{
-    margin: 0 auto;
-    background: #eeeeee;
-    width: 200px;
-    height: 500px;
+    margin: 10px auto;
+
+    width: 191px;
+}
+
+#header{
+    width: 100%;   
+    background: lightgreen;
+    border: 1px #000 solid;
+    border-radius: 5px;
+    padding: 2px;
 }
 
 #history{
     width: 100%;
-    min-height: 40px;
+    height: 88px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#history ul{
+    width: 100%;
+    padding: 0px;
+    right: 0px;
+    list-style: none;
+}
+#history ul li{
+    border-bottom: 1px #000 dashed;
+    margin: 0px 0px 2px 8px;
+    display: block;
+    width: 92%;
+    text-align: right;
 }
 
 #input-area{
     width: 100%;
     min-height: 40px;
+    margin: 5px 0px;
+    position: relative;
+}
+#input-area #expression{
+    display: block;
+    position: absolute;
+    right: 5px;
+}
+#input-area input[type="text"]{
+    display: block;
+    width: 98%;
+    height: 40px;
+    text-align: right;
+    padding-top: 14px;
+    font-size: 24px;
 }
 
 #main{
     width: 100%;
-    background: red;
+    height: 187px;
+    background: lightgreen;
+    margin: 5px 0px 0px 3px;
 }
-#main input{
-    display: block;
+
+#left-side{
+    float: left;
+    overflow: hidden;
+    width: 78px;
+}
+
+#middle-side{
+    float: left;
+    overflow: hidden;
+    width: 78px;
+}
+
+#right-side{
     float:left;
-    margin: 5px;
-    width: 25px;
-    height: 25px;
+    overflow: hidden;
+    width: 35px
 }
-input .equal{
-    display: block;
-    height: 50px;
+
+.btn{
+    display: inline;
+    margin: 0px 0px 3px 0px;
+    width: 35px;
+    height: 35px;
 }
-input .zero{
-    width: 50px;
+.btn:active{
+    background: lightgreen;
+}
+
+
+.btn-high{
+    height: 73px;
+}
+.btn-wide{
+    width: 74px;
 }

@@ -10,50 +10,64 @@
     <body>
         <div id="wrapper">
            
-            <div id="history">
-                <ul>
-                    
-                </ul>
-            </div>
-            
-            <div id="input-area">
-                <input type="text" class="calcDisplay"/>
+            <div id="header">
+                
+                <div id="history">
+                    <ul id="historyUl">
+                    </ul>
+                </div>
+                
+                <div id="input-area">
+                   <span id="expression"></span>
+                    <input type="text" readonly="readonly"  keydown="ketdownEvent(key)" id="result"/>
+                </div>
+                
             </div>
             
             <div id="main">
                 
+                <div id="left-side">
+                    
+                    <input type="button" onclick="setOperation('bspace')" value="&#8592;" class="btn" />
+                    <input type="button" onclick="setOperation('ce')" value="CE" class="btn" />
+                    <input type="button" onclick="addSymbol(7)" value="7" class="btn" />
+                    <input type="button" onclick="addSymbol(8)" value="8" class="btn" />
+                    <input type="button" onclick="addSymbol(4)" value="4" class="btn" />
+                    <input type="button" onclick="addSymbol(5)" value="5" class="btn" />
+                    <input type="button" onclick="addSymbol(1)" value="1" class="btn" />
+                    <input type="button" onclick="addSymbol(2)" value="2" class="btn" />
+                    <input type="button" onclick="addSymbol(0)" value="0" class="btn btn-wide" />
+                    
+                </div>
                 
-                <input type="button" value="&#8592;" class="calcClear calcFirst calcFunction" />
-                <input type="button" value="CE" class="calcClear calcFunction" />
-                <input type="button" value="C" class="calcClear calcFunction" />
-                <input type="button" value="+/-" class="calcInput" />
-                <input type="button" value= "√" class="calcInput" />
+                <div id="middle-side">
+                    
+                    <input type="button" onclick="setOperation('c')" value="C" class="btn" />
+                    <input type="button" onclick="setOperation('+/-')" value="+/-" class="btn" />
+                    <input type="button" onclick="addSymbol(9)" value="9" class="btn" />
+                    <input type="button" onclick="setOperation('/')" value="/" class="btn" />
+                    <input type="button" onclick="addSymbol(6)" value="6" class="btn" />
+                    <input type="button" onclick="setOperation('*')" value="*" class="btn" />
+                    <input type="button" onclick="addSymbol(3)" value="3" class="btn" />
+                    <input type="button" onclick="setOperation('-')" value="-" class="btn" />
+                    <input type="button" onclick="addSymbol('.')" value="." class="btn" />
+                    <input type="button" onclick="setOperation('+')" value="+" class="btn" />
+                    
+                </div>
                 
-                <input type="button" value="7" class="calcFirst calcInput" />
-                <input type="button" value="8" class="calcInput" />
-                <input type="button" value="9" class="calcInput" />
-                <input type="button" value="/" class="calcFunction" />
-                <input type="button" value="%" class="calcInput" />
-                
-                <input type="button" value="4" class="calcFirst calcInput" />
-                <input type="button" value="5" class="calcInput" />
-                <input type="button" value="6" class="calcInput" />
-                <input type="button" value="*" class="calcFunction" />
-                <input type="button" value="1/x" class="calcInput" />
-                
-                <input type="button" value="1" class="calcFirst calcInput" />
-                <input type="button" value="2" class="calcInput" />
-                <input type="button" value="3" class="calcInput" />
-                <input type="button" value="-" class="calcFunction" />
-                <input type="submit" value="=" class="equal" />
-                
-                <input type="button" value="0" class="zero" />
-                <input type="button" value="." class="calcInput" />
-                <input type="button" value="+" class="calcFunction" />
-                
+                <div id="right-side">
+                    
+                    <input type="button" onclick="setOperation('√')" value= "√" class="btn" />
+                    <input type="button" onclick="setOperation('%')" value="%" class="btn" />
+                    <input type="button" onclick="setOperation('1/x')" value="1/x" class="btn" />
+                    <input type="submit" onclick="setOperation('=')" value="=" class="btn btn-high" />
+                    
+                </div>
                 
             </div>
         </div>
+        
+        <script>init()</script>
     </body>
 </html>
 
