@@ -33,9 +33,10 @@ function isEqual()
     
     var evalExpression = eval(firstDigit + operation + secondDigit);
     
-    getId('historyUl').innerHTML += "<li>" + firstDigit+ ' ' + operation + ' ' + secondDigit + "</li>";
+    getId('historyUl').innerHTML += "<li>" + firstDigit+ ' ' + operation + ' ' + secondDigit + ' = ' + evalExpression + "</li>";
  
-    result.value = evalExpression;
+    if(operation=='/' && secondDigit != 0)
+        result.value = evalExpression;
 }
 
 function init()
@@ -123,6 +124,8 @@ function setOperation(op)
 {
     var result = getId('result');
     
+    var tempValue = result.value;
+    
     if(firstDigit!='' && op!='ce' && op!='bspace')
         secondDigit = result.value;
     
@@ -154,29 +157,29 @@ function setOperation(op)
             
         case '+/-':
             negate();
-            getId('historyUl').innerHTML += "<li>"+result.value+"</li>";
+            getId('historyUl').innerHTML += "<li>negate(" + tempValue + ") = " +result.value + "</li>";
             return;
             
         case '1/x':
             result.value = eval('1/'+ result.value);
-            getId('historyUl').innerHTML += "<li>"+result.value+"</li>";
+            getId('historyUl').innerHTML += "<li>1/" + tempValue + " = " + result.value + "</li>";
             return;
             
         case '√':
             if(parseFloat(result.value)>0)
             {
                 result.value  = Math.sqrt(result.value);    
-                getId('historyUl').innerHTML += "<li>"+result.value+"</li>";
+                getId('historyUl').innerHTML += "<li>√" + tempValue + " = " + result.value + "</li>";
             } 
             else
             {
-                getId('historyUl').innerHTML += "<li>NaN</li>";
+                getId('historyUl').innerHTML += "<li>√" + tempValue + " = NaN</li>";
             }
             return;
             
         case '%':
             result.value = eval(result.value + '/100');
-            getId('historyUl').innerHTML += "<li>"+result.value+"</li>";
+            getId('historyUl').innerHTML += "<li>% " + tempValue + " = " + result.value + "</li>";
             return;
             
         case 'bspace':
